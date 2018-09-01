@@ -1,6 +1,6 @@
 #include "ESP8266WiFi.h"
 
-#include "PR_ScanNetworksAsync.hpp"
+#include "PR_ESP8266_ScanNetworksAsync.hpp"
 
 #define BLINK_PERIOD 10000
 long lastBlinkMillis;

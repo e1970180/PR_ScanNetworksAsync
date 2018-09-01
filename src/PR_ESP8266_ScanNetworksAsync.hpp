@@ -8,7 +8,7 @@ class	PR_ScanNetworksAsyncClass {
 	public:
 		bool	start();
 		bool	result();
-		bool	result( String& resStr);
+		bool	result( String& scanResult);
 	protected:
 	
 };
@@ -58,30 +58,30 @@ bool	PR_ScanNetworksAsyncClass::result() {
 	}//switch	
 }
 
-bool	PR_ScanNetworksAsyncClass::result(String& resStr) {
+bool	PR_ScanNetworksAsyncClass::result(String& scanResult) {
 	
 	int	n = WiFi.scanComplete();
 	switch ( n ) {
 		case -2: //Scanning has not been triggered
-			resStr = "Scanning has not been triggered";
+			scanResult = "Scanning has not been triggered";
 			break;
 		case -1: //Scanning still in progress
-			resStr = "Scanning in progress";
+			scanResult = "Scanning in progress";
 			break;
 		case 0: //no networks find
-			resStr = "no networks find";
+			scanResult = "no networks find";
 			break;
 		default: { // we have results
 		
-			resStr = String(n) + "network(s) found\n";
+			scanResult = String(n) + "network(s) found\n";
 			for (int i = 0; i < n; i++)
 			{
-			  resStr += String(i+1) + "\t" ;
-			  resStr += WiFi.SSID(i) + "\t ch:";
-			  resStr += String( WiFi.channel(i) ) + "\t";
-			  resStr += String( WiFi.RSSI(i) ) + "\t";
-			  resStr += WiFi.encryptionType(i) == ENC_TYPE_NONE ? "open" : "secure" ;
-			  resStr += "\n";
+			  scanResult += String(i+1) + "\t" ;
+			  scanResult += WiFi.SSID(i) + "\t ch:";
+			  scanResult += String( WiFi.channel(i) ) + "\t";
+			  scanResult += String( WiFi.RSSI(i) ) + "\t";
+			  scanResult += WiFi.encryptionType(i) == ENC_TYPE_NONE ? "open" : "secure" ;
+			  scanResult += "\n";
 			}
 			WiFi.scanDelete();		
 		}
