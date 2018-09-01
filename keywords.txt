@@ -16,6 +16,10 @@ PR_ScanNetworksAsyncClass	KEYWORD1
 start		KEYWORD2	
 result		KEYWORD2	
 
+#######################################
+# Structures (KEYWORD3)
+#######################################
+
 
 
 ######################################
