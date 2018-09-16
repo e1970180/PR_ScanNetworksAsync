@@ -39,11 +39,16 @@ void loop()
 	scanner.start();
   }
 
-  
-  scanner.result(answer);
+  scanner.resultPrint();
+  Serial.println();
+
+  scanner.resultTXT(answer);
+  Serial.println(answer);
+
+  scanner.resultHTML(answer);
   Serial.println(answer);
   
-  Serial.println(WiFi.getMode());
+  scanner.clearResult();
   
   delay(500);
   
