@@ -13,8 +13,11 @@ PR_ScanNetworksAsyncClass	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 
-start		KEYWORD2	
-result		KEYWORD2	
+start			KEYWORD2	
+resultPrint		KEYWORD2	
+resultTXT		KEYWORD2
+resultHTML		KEYWORD2
+clearResult		KEYWORD2
 
 #######################################
 # Structures (KEYWORD3)
